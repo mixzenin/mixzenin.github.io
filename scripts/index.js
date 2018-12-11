@@ -1,6 +1,6 @@
 const request = require('request');
 const URL = 'http://18.219.20.226:7777';
-const URL_FEE = 'http://18.219.20.226:2000';
+const URL_FEE = 'https://18.219.20.226';
 const EXPLORERS = {
     'btc': 'https://live.blockcypher.com/btc/tx/',
     'ltc': 'https://live.blockcypher.com/ltc/tx/',
@@ -90,6 +90,9 @@ setInterval(async () => {
 let getFee = (chain) => {
     return new Promise((resolve, reject) => {
         request({
+          headers: {
+
+          },
           uri: URL_FEE + '/fee/findout',
           method: 'GET',
           qs: {
