@@ -1,5 +1,5 @@
 const request = require('request');
-const URL = 'http://18.219.20.226:7777';
+const URL = 'https://13.58.158.218';
 const URL_FEE = 'https://18.219.20.226';
 const EXPLORERS = {
     'btc': 'https://live.blockcypher.com/btc/tx/',
@@ -15,7 +15,6 @@ let prevAddress = '';
 
 document.addEventListener('DOMContentLoaded', async () =>  {
     let fee = await getFee('btc');
-    console.log(fee);
     document.getElementById('fee').value = fee;
     document.getElementById('balance').textContent = `Баланс - ${(document.getElementById('chain').value).toUpperCase()}`;
 
@@ -97,8 +96,8 @@ let getFee = (chain) => {
           json: true
         },
           (error, response, body) => {
-            if(error) console.log(error);;
-            console.log(body);
+            if(error) console.log(error);
+            console.log('body', body);
             resolve(body.data);
           }
         )
