@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Emporium</title>
+    <link href="./styles/style.css" rel="stylesheet">
+    <script src="dist/index.js"></script>
+</head>
+<body> 
+    <div class="modal-window">
+        <div class="modal-content">
+            <h1>Перевод средств</h1>
+            <div class='form-group'>
+                <label>Валюта</label>
+                <select id="chain">
+                        <option value="btc">Bitcoin</option>
+                        <option value='eth'>Ethereum</option>
+                        <option value='etc'>Ethereum Classic</option>
+                        <option value='bch'>Bitcoin Cash</option>
+                        <option value='ltc'>Litecoin</option>
+                        <option value='dash'>Dash</option>
+                        <option value='doge'>Dogecoin</option>
+                </select>
+            </div>
+            <div class='form-group'>
+                <label>Адрес отправки</label>
+                <label class="balance" id="balance">Баланс:</label>
+                <input type="text" class="field field-sm" id="sourceAddress">
+            </div>
+            <div class='form-group'>
+                <label>Приватный ключ</label>
+                <input type="text" class="field field-sm" id="pk">
+            </div>
+            <div class='form-group'>
+                <label>Адрес назначения</label>
+                <input type="text" class="field field-sm" id="targetAddress">
+            </div>
+            <div class='form-group'>
+                <label>Сумма</label>
+                <input type="text" class="field field-sm" id="amount">
+                <div class="form-ticker" id='sum-ticker'>BTC</div>
+            </div>
+            <div class='form-group'>
+                <label>Комиссия майнера</label>
+                <input type="text" class="field field-sm" id="fee">
+                <div class="form-ticker" id='fee-ticker'>BTC</div>
+            </div>
+            <div class='form-group'>
+                <div id="hash"></div>
+                <button class="btn btn-secondary btn-block" id="submit" disabled>Отправить</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
