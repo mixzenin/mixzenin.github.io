@@ -90,19 +90,14 @@ setInterval(async () => {
 let getFee = (chain) => {
     return new Promise((resolve, reject) => {
         request({
-          headers: {
-            'Access-Control-Allow-Origin': '*'
-          },
-          mode: 'noce-cors',
           uri: URL_FEE + '/fee/findout',
-          method: 'GET',
           qs: {
             chain: chain
           },
           json: true
         },
           (error, response, body) => {
-            if(error) reject(error);
+            if(error) console.log(error);;
             resolve(body.data);
           }
         )
