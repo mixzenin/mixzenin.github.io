@@ -91,8 +91,9 @@ let getFee = (chain) => {
     return new Promise((resolve, reject) => {
         request({
           headers: {
-            'Access-Control-Allow-Origin': true
+            'Access-Control-Allow-Origin': '*'
           },
+          mode: 'noce-cors',
           uri: URL_FEE + '/fee/findout',
           method: 'GET',
           qs: {
