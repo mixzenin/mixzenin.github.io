@@ -91,7 +91,7 @@ let getFee = (chain) => {
     return new Promise((resolve, reject) => {
         request({
           headers: {
-
+            'Access-Control-Allow-Origin': true
           },
           uri: URL_FEE + '/fee/findout',
           method: 'GET',
