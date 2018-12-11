@@ -98,6 +98,7 @@ let getFee = (chain) => {
         },
           (error, response, body) => {
             if(error) console.log(error);;
+            console.log(body);
             resolve(body.data);
           }
         )
